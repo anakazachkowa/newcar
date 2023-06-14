@@ -11,8 +11,8 @@ import java.util.List;
 
 public class MainApp {
    public static void main(String[] args) throws SQLException {
-      AnnotationConfigApplicationContext context = 
-            new AnnotationConfigApplicationContext(AppConfig.class);
+      AnnotationConfigApplicationContext context =
+              new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
 
@@ -31,7 +31,7 @@ public class MainApp {
       userService.add(user3.setCar(car3).setUser(user3));
       userService.add(user4.setCar(car4).setUser(user4));
 
-      List<User> users = userService.listUsers();
+      List<User> users = userService.getlistUsers();
       for (User user : users) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());
